@@ -1,7 +1,7 @@
 # CInSQLPlatform
 Web-based plataform to increase SQL study experience
 
-# **Motivation and Overview** #
+# **Motivation and Overview**
 
 
 ZooSQL is a nice web plataform to traing SQL Skills. At CIn - UFPE (Centro de Informática) there is a discipline to the students learn everything about databases and special-purpose languages like SQL to manage them. In this context, My idea is create a web-plataform like SQLZoo to assist teachers, teachers assistants and students to improve the study experience on SQL and databases in that discipline.
@@ -33,8 +33,11 @@ First download XAMPP or/and install all the tools one by one. Put all files insi
 ## **TODO List** (Updates: every week)
 
 * Remove Question
+
 * Modify Question
+
 * Group Questions in a list
+
 ------------
 ## **How to Contribute?**
 
