@@ -21,7 +21,7 @@ In this plataform you can create list of questions to students can solve and so 
 
 ------------------------------------------------
 
-## ** Development Stage **
+## **Development Stage**
 
 Early Stage: Discussions and easy task implementations
 
