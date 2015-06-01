@@ -19,7 +19,9 @@ In this plataform you can create list of questions to students can solve and so 
 | MySQL                                | 4.2.11           |
 | Bootstrap                            | 3.3.4            |
 
-## **Development Stage **
+------------------------------------------------
+
+## ** Development Stage **
 
 Early Stage: Discussions and easy task implementations
 
