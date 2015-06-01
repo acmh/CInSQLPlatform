@@ -1,1 +1,15 @@
-CREATE TABLE tutorials_tbl(question_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, question_title VARCHAR(100) NOT NULL, question_statement VARCHAR(10005) NOT NULL, question_code VARCHAR(10005) NOT NULL, question_listid INT NOT NULL); 
+//CRIA AS QUESTOES
+CREATE TABLE question_list(
+	question_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+	question_title VARCHAR(100) NOT NULL, 
+	question_statement VARCHAR(10005) NOT NULL, 
+	question_code VARCHAR(10005) NOT NULL, 
+	question_listid INT NOT NULL
+);
+
+//CRIA LISTAS EXISTENTES
+CREATE TABLE list(
+	list_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	list_desc VARCHAR(300),
+	list_num INT NOT NULL
+); 

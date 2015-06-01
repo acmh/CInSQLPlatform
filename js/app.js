@@ -1,4 +1,4 @@
-	// create the module and name it scotchApp
+	// create the module and name it myApp
     // also include ngRoute for all our routing needs
     var myApp = angular.module('myApp', ['ngRoute']);
 
@@ -7,18 +7,22 @@
         $routeProvider
 
  
-            // route for the about page
-            .when('/add', {
+            //Route for add question
+            .when('/addQuestion', {
                 templateUrl : 'pages/addQuestions.html',
                 controller  : 'CRUDController'
             })
 
-            // route for the contact page
+			.when('/addList', {
+                templateUrl : 'pages/addList.html',
+                controller  : 'CRUDController'
+            })
+			
+            //Route for remove a question
             .when('/remove', {
                 templateUrl : 'pages/removeQuestion.html',
                 controller  : 'CRUDController'
             });
-		 // use the HTML5 History API
       
     });
 
@@ -30,8 +34,9 @@
 			console.log($scope.wtf);
 			console.log($scope.code);
 			var request = $http({
-				method: "post",
-				url: "http://localhost:8080/ZooSQL/addQuestion.php",
+				method: "POST",
+				//URL
+				url: "http://localhost:8080/CInSQL/CInSQLPlatform/php/addQuestion.php",
 				data: {
 					title: $scope.title,
 					statement: $scope.wtf,
@@ -41,9 +46,32 @@
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 			});
 			
+			//NEED CHANGE
 			request.success(function (data) {
 				console.log("CONSEGUI\n");
-			});
-			
+			});	
 		}
+		
+		$scope.addList = function(){
+			console.log($scope.numList);
+			console.log($scope.listDesc);
+			
+			var request = $http({
+				method: "POST",
+				//URL
+				url: "http://localhost:8080/CInSQL/CInSQLPlatform/php/addList.php",
+				data: {
+					numList: $scope.numList,
+					listDesc: $scope.listDesc
+				},
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+			});
+
+			request.success(function (data) {
+				console.log("CONSEGUI\n");
+			});	
+		}
+		
+		
+		
 	});

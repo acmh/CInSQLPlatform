@@ -1,0 +1,20 @@
+<form role="form" ng-controller="CRUDController">
+	<div class="col-lg-6">
+		<div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Campos Obrigatórios</strong></div>
+			<div class="form-group">
+				<label for="InputName">Número da Lista</label>
+					<div class="input-group">
+						<input ng-model="numList" type="number" min="0" class="form-control" name="InputName" id="InputName"required>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+			</div>
+			<div class="form-group">
+				<label for="InputMessage">Descrição da Lista</label>
+					<div class="input-group">
+						<textarea ng-model="listDesc" name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+					</div>
+			</div>
+			<input ng-click="addList()" type="submit" name="submit" id="submit" value="Criar Lista" class="btn btn-info pull-right">
+	</div>
+</form>
