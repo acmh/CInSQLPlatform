@@ -2,29 +2,34 @@
 
   var app = angular.module("validation", ['ngMessages']);
 
-  var RegistrationController = function() {
-    var model = this;
-
-    model.message = "";
-
-    model.user = {
-      name: "",
-	  lastname: "",
-	  email: "",
-	  password: "",
-      confirmPassword: ""
-    };
-
-    model.submit = function(isValid) {
-      console.log("h");
-      if (isValid) {
-        model.message = "Submitted " + model.user.username;
-      } else {
-        model.message = "There are still invalid fields below";
-      }
-    };
-
-  };
+	var RegistrationController = function($scope, $http) {
+		$scope.message = "";
+		$scope.register = function() {
+			console.log("enviando");
+			console.log($scope.name); 
+			console.log($scope.lastname);
+			var request = $http({
+				method: "POST",
+				//URL
+				url: "http://localhost:8080/CInSQL/CInSQLPlatform/php/Registration.php",
+				data: {
+					user_name: $scope.name, 
+					user_last_name: $scope.lastname,
+					user_email: $scope.email,
+					user_password_new: $scope.password,
+					user_password_repeat: $scope.confirmPassword
+				},
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+			});
+			
+			request.success(function (data) {
+				console.log(data);
+			});	
+		};
+	
+	};
+  
+  	
 
   var compareTo = function() {
     return {
@@ -47,5 +52,8 @@
 
   app.directive("compareTo", compareTo);
   app.controller("RegistrationController", RegistrationController);
+  
+  
+  
 
 }());
