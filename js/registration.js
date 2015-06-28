@@ -11,7 +11,7 @@
 			var request = $http({
 				method: "POST",
 				//URL
-				url: "http://localhost:8080/CInSQL/CInSQLPlatform/php/Registration.php",
+				url: "../CInSQLPlatform/php/Registration.php",
 				data: {
 					user_name: $scope.name, 
 					user_last_name: $scope.lastname,
