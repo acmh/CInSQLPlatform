@@ -5,9 +5,6 @@
 	var RegistrationController = function($scope, $http) {
 		$scope.message = "";
 		$scope.register = function() {
-			console.log("enviando");
-			console.log($scope.name); 
-			console.log($scope.lastname);
 			var request = $http({
 				method: "POST",
 				//URL
