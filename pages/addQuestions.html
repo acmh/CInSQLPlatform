@@ -22,6 +22,14 @@
 						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
 					</div>
 			</div>
+
+			<tags-input ng-model="hue" 
+                placeholder="Add a category" 
+                min-length="1"
+                max-length="15"
+                allowed-tags-pattern="[\w\s]+">
+    		</tags-input>
+
 			<input ng-click="addQuestion()" type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
 	</div>
 </form>

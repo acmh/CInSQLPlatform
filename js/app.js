@@ -1,6 +1,6 @@
 	// create the module and name it myApp
     // also include ngRoute for all our routing needs
-    var myApp = angular.module('myApp', ['ngRoute']);
+    var myApp = angular.module('myApp', ['ngRoute','ngTagsInput']);
 
     // configure our routes
     myApp.config(function($routeProvider) {
@@ -33,6 +33,7 @@
 			console.log($scope.title);
 			console.log($scope.wtf);
 			console.log($scope.code);
+			
 			var request = $http({
 				method: "POST",
 				//URL
@@ -41,7 +42,7 @@
 					title: $scope.title,
 					statement: $scope.wtf,
 					code: $scope.code,
-					listNum: $scope.list
+					
 				},
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 			});
